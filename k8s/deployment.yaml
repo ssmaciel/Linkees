@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
         - name: links-dep
-          image: samukamaciel/links:v3
+          image: samukamaciel/links:v4
           ports:
             - containerPort: 80
