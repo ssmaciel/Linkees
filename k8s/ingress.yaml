@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-path-links
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+  - host: www.samuelmaciel.com.br
+    http:
+      paths:
+        - path: /links
+          pathType: Prefix
+          backend:
+            service:
+              name: links-service
+              port:
+                number: 80
+  - host: samuelmaciel.com.br
+    http:
+      paths:
+        - path: /links
+          pathType: Prefix
+          backend:
+            service:
+              name: links-service
+              port:
+                number: 80

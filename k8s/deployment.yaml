@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: links-dep
+spec:
+  selector:
+    matchLabels:
+      app: links-dep
+  template:
+    metadata:
+      labels:
+        app: links-dep
+    spec:
+      containers:
+        - name: links-dep
+          image: samukamaciel/links:v1
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
