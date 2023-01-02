@@ -13,10 +13,6 @@ spec:
     spec:
       containers:
         - name: links-dep
-          image: samukamaciel/links:v2
+          image: samukamaciel/links:v4
           ports:
             - containerPort: 80
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
